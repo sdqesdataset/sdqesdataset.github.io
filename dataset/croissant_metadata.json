@@ -1,0 +1,197 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "wd": "https://www.wikidata.org/wiki/"
+  },
+  "@type": "sc:Dataset",
+  "name": "EgoSDQES",
+  "description": "The goal of SDQES is to detect the start of said event, described by a natural language query or description, with high accuracy and low latency, with a particular focus on egocentric video streams in embodied applications. Starting from existing annotations in Ego4D dataset (NLQ or Moments annotations) we generate new temporally grounded annotations prompting the model to identify the start of a complex event.",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "citeAs": "EgoSDQES",
+  "license": "afl-3.0",
+  "url": "TODO",
+  "version": "1.0.0",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "annotations.csv",
+      "name": "annotations.csv",
+      "contentSize": "TODO",
+      "contentUrl": "TODO",
+      "encodingFormat": "text/csv",
+      "sha256": "TODO"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "annotations",
+      "name": "annotations",
+      "description": "The list of annotations. Does not include videos.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "annotations/split",
+          "name": "split",
+          "description": "Split of the annotation. One of 'train' or 'val'.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "annotations.csv"
+            },
+            "extract": {
+              "column": "split"
+            }
+          }
+        },
+        {
+            "@type": "cr:Field",
+            "@id": "annotations/video_uid",
+            "name": "video_uid",
+            "description": "The unique identifier of the Ego4D video.",
+            "dataType": "sc:Text",
+            "source": {
+              "fileObject": {
+                "@id": "annotations.csv"
+              },
+              "extract": {
+                "column": "video_uid"
+              }
+            }
+          },
+          {
+            "@type": "cr:Field",
+            "@id": "annotations/query",
+            "name": "query",
+            "description": "The query referring to the start of an event in the video.",
+            "dataType": "sc:Text",
+            "source": {
+              "fileObject": {
+                "@id": "annotations.csv"
+              },
+              "extract": {
+                "column": "query"
+              }
+            }
+          },
+          {
+            "@type": "cr:Field",
+            "@id": "annotations/response",
+            "name": "response",
+            "description": "The expected model response when the queried event starts.",
+            "dataType": "sc:Text",
+            "source": {
+              "fileObject": {
+                "@id": "annotations.csv"
+              },
+              "extract": {
+                "column": "response"
+              }
+            }
+          },
+          {
+            "@type": "cr:Field",
+            "@id": "annotations/video_start_time",
+            "name": "video_start_time",
+            "description": "The start timestamp of the event in the video.",
+            "dataType": "sc:Float",
+            "source": {
+              "fileObject": {
+                "@id": "annotations.csv"
+              },
+              "extract": {
+                "column": "video_start_time"
+              }
+            }
+          },
+          {
+            "@type": "cr:Field",
+            "@id": "annotations/video_end_time",
+            "name": "video_end_time",
+            "description": "The end timestamp of the event in the video.",
+            "dataType": "sc:Float",
+            "source": {
+              "fileObject": {
+                "@id": "annotations.csv"
+              },
+              "extract": {
+                "column": "video_end_time"
+              }
+            }
+          },
+          {
+            "@type": "cr:Field",
+            "@id": "annotations/video_fps",
+            "name": "video_fps",
+            "description": "Metadata of the video: frames per second of the video.",
+            "dataType": "sc:Integer",
+            "source": {
+              "fileObject": {
+                "@id": "annotations.csv"
+              },
+              "extract": {
+                "column": "video_fps"
+              }
+            }
+          },
+          {
+            "@type": "cr:Field",
+            "@id": "annotations/video_fps",
+            "name": "video_fps",
+            "description": "Metadata of the video: total length of the video in frames.",
+            "dataType": "sc:Integer",
+            "source": {
+              "fileObject": {
+                "@id": "annotations.csv"
+              },
+              "extract": {
+                "column": "video_fps"
+              }
+            }
+          }
+      ]
+    }
+  ]
+}
