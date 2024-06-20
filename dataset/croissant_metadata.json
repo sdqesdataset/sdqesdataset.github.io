@@ -51,17 +51,16 @@
   "conformsTo": "http://mlcommons.org/croissant/1.0",
   "citeAs": "EgoSDQES",
   "license": "afl-3.0",
-  "url": "TODO",
+  "url": "https://sdqesdataset.github.io/",
   "version": "1.0.0",
   "distribution": [
     {
       "@type": "cr:FileObject",
       "@id": "annotations.csv",
       "name": "annotations.csv",
-      "contentSize": "TODO",
-      "contentUrl": "TODO",
+      "contentUrl": "https://sdqesdataset.github.io/dataset/all.csv",
       "encodingFormat": "text/csv",
-      "sha256": "TODO"
+      "sha256": "735d24504090b72d86f052242475f2c12f90b95d52b9f3adc382a46a01701d91"
     }
   ],
   "recordSet": [
