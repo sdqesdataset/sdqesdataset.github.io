@@ -316,6 +316,36 @@ code {
   border-radius: 3px;
 }
 
+.container.has-text-centered {
+  display: flex;
+  justify-content: center;
+}
+
+.download-button {
+  background-color: #4a4a4a;
+  color: #ffffff;
+  font-weight: 500;
+  border: 2px solid #333333;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-button:hover {
+  background-color: #333333;
+  transform: scale(1.05);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.download-button:active {
+  transform: scale(0.98);
+}
+
+.download-button i {
+  margin-right: 8px;
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
