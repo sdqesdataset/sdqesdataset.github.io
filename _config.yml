@@ -9,7 +9,7 @@ name: EgoSDQES Dataset
 description: Egocentric Streaming Detection of Queried Event Start
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: /static/logo.pdf
+avatar: /static/logo.svg
 
 #
 # Flags below are optional
